@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!-- PunchME Official Landing Page • GitHub Pages v1.0.1 • Updated: 2026 -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PunchME — Google Play</title>
+  <meta name="theme-color" content="#0B0F19">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background: #0B0F19;
+      color: #F3F4F6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 24px;
+      background-image: 
+        radial-gradient(circle at 50% 30%, rgba(56, 189, 248, 0.18) 0%, transparent 60%),
+        radial-gradient(circle at 50% 85%, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
+      overflow: hidden;
+    }
+
+    /* Language Switcher */
+    .lang-switcher {
+      display: flex;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 4px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: #94A3B8;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .lang-btn:hover {
+      color: #FFF;
+    }
+
+    .lang-btn.active {
+      background: #38BDF8;
+      color: #0B0F19;
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+    }
+
+    /* Main Card */
+    .card {
+      background: rgba(18, 24, 38, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 28px;
+      padding: 48px 36px;
+      max-width: 440px;
+      width: 100%;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(56, 189, 248, 0.15);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .game-icon-wrapper {
+      width: 130px;
+      height: 130px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #0284C7, #0F172A);
+      padding: 3px;
+      box-shadow: 0 12px 30px rgba(2, 132, 199, 0.35);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .game-icon {
+      width: 100%;
+      height: 100%;
+      border-radius: 25px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .icon-placeholder {
+      font-size: 64px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 40px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      color: #FFF;
+    }
+
+    h1 span {
+      background: linear-gradient(135deg, #38BDF8, #818CF8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.subtitle {
+      font-size: 15px;
+      color: #94A3B8;
+      margin-bottom: 32px;
+      line-height: 1.5;
+      min-height: 45px;
+    }
+
+    .btn-play {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      width: 100%;
+      background: #000;
+      color: #FFF;
+      text-decoration: none;
+      padding: 16px 24px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-play:hover {
+      transform: translateY(-2px);
+      border-color: #38BDF8;
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.25);
+    }
+
+    .btn-play svg {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+
+    .btn-text {
+      text-align: left;
+    }
+
+    .btn-text .small {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #94A3B8;
+      font-weight: 600;
+    }
+
+    .btn-text .big {
+      display: block;
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFF;
+      font-family: 'Outfit', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Minimal Language Switcher -->
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+    <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
+    <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+    <button class="lang-btn" onclick="setLanguage('de')">DE</button>
+    <button class="lang-btn" onclick="setLanguage('fr')">FR</button>
+    <button class="lang-btn" onclick="setLanguage('pt')">PT</button>
+  </div>
+
+  <div class="card">
+    <!-- Icon / Image -->
+    <div class="game-icon-wrapper">
+      <img src="icon.png" alt="PunchME" class="game-icon" onerror="this.style.display='none'; document.getElementById('fallback-icon').style.display='flex';">
+      <div id="fallback-icon" class="icon-placeholder" style="display:none;">🥊</div>
+    </div>
+
+    <!-- Title -->
+    <h1>Punch<span>ME</span></h1>
+    <p id="subtitle" class="subtitle">Insane 3D Ragdoll Arcade Runner with crazy stunts, rocket jetpacks & crash combos!</p>
+
+    <!-- Google Play Link -->
+    <a href="https://play.google.com/store/apps/details?id=com.TartarooGames.PunchME&utm_source=g1" target="_blank" rel="noopener noreferrer" class="btn-play">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3.6 1.8c-.3.3-.4.8-.4 1.4v17.6c0 .6.1 1.1.4 1.4l.1.1 9.9-9.9v-.2L3.7 1.7l-.1.1zM17.3 15.9l-3.3-3.3v-.2l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.6 0 2.2l-4 2.3zM13.6 12.3L3.7 22.2c.4.1.9.1 1.4-.2l12.2-7-3.7-2.7zM13.6 11.7l3.7-2.7L5.1 2c-.5-.3-1-.3-1.4-.2l9.9 9.9z"/>
+      </svg>
+      <div class="btn-text">
+        <span id="btn-small" class="small">GET IT ON</span>
+        <span class="big">Google Play</span>
+      </div>
+    </a>
+  </div>
+
+  <script>
+    const translations = {
+      en: {
+        subtitle: "Insane 3D Ragdoll Arcade Runner with crazy stunts, rocket jetpacks & crash combos!",
+        btnSmall: "GET IT ON"
+      },
+      ru: {
+        subtitle: "Безумный 3D Ragdoll Runner с трюками, джетпаками и разрушениями!",
+        btnSmall: "ДОСТУПНО В"
+      },
+      es: {
+        subtitle: "¡Alocado juego de carreras ragdoll en 3D con acrobacias, propulsores y combos!",
+        btnSmall: "DISPONIBLE EN"
+      },
+      de: {
+        subtitle: "Verrückter 3D-Ragdoll-Runner mit Stunts, Raketen-Jetpacks und Zerstörung!",
+        btnSmall: "JETZT BEI"
+      },
+      fr: {
+        subtitle: "Jeu de course ragdoll 3D déjanté avec cascades, réacteurs et crash combos !",
+        btnSmall: "DISPONIBLE SUR"
+      },
+      pt: {
+        subtitle: "Insano jogo de corrida ragdoll 3D com manobras, propulsores a jato e combos!",
+        btnSmall: "DISPONÍVEL NO"
+      }
+    };
+
+    function setLanguage(lang) {
+      if (!translations[lang]) lang = 'en';
+      
+      // Update texts
+      document.getElementById('subtitle').textContent = translations[lang].subtitle;
+      document.getElementById('btn-small').textContent = translations[lang].btnSmall;
+      document.documentElement.lang = lang;
+
+      // Update active button state
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+
+      localStorage.setItem('punchme_lang', lang);
+    }
+
+    // Auto-detect or load saved, fallback to English by default
+    const savedLang = localStorage.getItem('punchme_lang');
+    if (savedLang && translations[savedLang]) {
+      setLanguage(savedLang);
+    } else {
+      // By default English
+      setLanguage('en');
+    }
+  </script>
+
+</body>
+</html>
